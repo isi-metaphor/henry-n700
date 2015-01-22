@@ -65,7 +65,8 @@ def cbScoreFunction( ctx ):
 			_samePreds      = lambda: p[0] == q[0]
 
 			# CLASSICAL UNIFICATION.
-			if _samePreds() and (p[5] > q[5] or (p[5] == q[5] and p[2] > q[2])):
+                        if _samePreds() and len(p[1]) == len(q[1]) and (p[5] > q[5] or (p[5] == q[5] and p[2] > q[2])):
+			#if _samePreds() and (p[5] > q[5] or (p[5] == q[5] and p[2] > q[2])):
 				for i in xrange(len(p[1])):
 					if p[1][i] != q[1][i] and p[1][i][0].isupper() and q[1][i][0].isupper(): break
 				else:
